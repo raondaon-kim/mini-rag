@@ -1,5 +1,9 @@
 # Mini-RAG: Local AI Cowork Platform
 
+**English** | **[한국어](README.ko.md)**
+
+---
+
 A local-first AI platform that turns your documents into an intelligent workspace. Upload Excel, PDF, DOCX, or PPTX files, ask questions in any language, generate new documents, and get career analysis — all powered by 11 specialized AI agents working together.
 
 ## Why Mini-RAG?
