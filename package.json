@@ -1,0 +1,47 @@
+{
+  "name": "mini-rag",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Local AI Cowork Platform — RAG + Task Execution + Memory",
+  "scripts": {
+    "dev": "tsx watch server/index.ts",
+    "dev:client": "cd client && npx vite",
+    "build": "cd client && npm run build",
+    "start": "npx tsx server/index.ts",
+    "build:start": "npm run build && npm start",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.97",
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@huggingface/transformers": "^4.0.1",
+    "better-sqlite3": "^11.7.0",
+    "chokidar": "^4.0.0",
+    "cors": "^2.8.5",
+    "docx": "^9.6.1",
+    "dotenv": "^16.4.0",
+    "exceljs": "^4.4.0",
+    "express": "^5.1.0",
+    "gpt-tokenizer": "^2.8.0",
+    "gray-matter": "^4.0.3",
+    "multer": "^1.4.5-lts.2",
+    "officeparser": "^5.1.1",
+    "pdf-parse": "^1.1.1",
+    "pptxgenjs": "^4.0.1",
+    "sharp": "^0.34.5",
+    "sqlite-vec": "^0.1.9",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.0.0",
+    "playwright": "^1.59.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

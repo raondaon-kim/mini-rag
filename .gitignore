@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+
+# SQLite DB
+data/rag.sqlite
+data/rag.sqlite-wal
+data/rag.sqlite-shm
+
+# Generated/uploaded files
+data/output/
+data/memory/
+uploads/
+
+# Logs
+*.log
+
+# Test data files (user-specific)
+*.xlsx
+*.pdf
+*.docx
+*.pptx
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# External skill sources (reference only)
+.claude/anthropic-skills/
+
+# Temp scripts
+create_*.py
+create_*.js
+create_*.cjs
+test_*.js
+sqlite-rag-technical-doc.md
+
+# Build info
+*.tsbuildinfo
+
+# Package locks (root only, keep client's)
+/package-lock.json

@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #464036 transparent;
+  }
+
+  ::selection {
+    background-color: rgba(232, 168, 76, 0.3);
+    color: #f5f0e8;
+  }
+
+  body {
+    font-family: "Pretendard", "Noto Sans KR", system-ui, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  #root {
+    height: 100vh;
+  }
+}
+
+/* Markdown content styling */
+.prose-rag h1,
+.prose-rag h2,
+.prose-rag h3 {
+  font-family: "Newsreader", "Noto Serif KR", Georgia, serif;
+  color: #f5f0e8;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+  font-weight: 500;
+}
+.prose-rag h1 { font-size: 1.4em; }
+.prose-rag h2 { font-size: 1.2em; }
+.prose-rag h3 { font-size: 1.05em; }
+
+.prose-rag p {
+  margin-bottom: 0.6em;
+  line-height: 1.7;
+}
+
+.prose-rag ul, .prose-rag ol {
+  margin: 0.4em 0;
+  padding-left: 1.4em;
+}
+
+.prose-rag li {
+  margin-bottom: 0.25em;
+  line-height: 1.6;
+}
+
+.prose-rag code {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.88em;
+  background: rgba(70, 64, 54, 0.6);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: #e8a84c;
+}
+
+.prose-rag pre {
+  background: #1e1b17;
+  border: 1px solid #464036;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 0.8em 0;
+  overflow-x: auto;
+}
+
+.prose-rag pre code {
+  background: none;
+  padding: 0;
+  color: #ece5d8;
+  font-size: 0.85em;
+}
+
+.prose-rag blockquote {
+  border-left: 3px solid #e8a84c;
+  padding-left: 1em;
+  margin: 0.8em 0;
+  color: #c9b8a4;
+  font-style: italic;
+}
+
+.prose-rag table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8em 0;
+  font-size: 0.9em;
+}
+
+.prose-rag th {
+  background: rgba(70, 64, 54, 0.5);
+  padding: 0.5em 0.8em;
+  text-align: left;
+  font-weight: 500;
+  border-bottom: 2px solid #3a342c;
+  color: #e8a84c;
+}
+
+.prose-rag td {
+  padding: 0.4em 0.8em;
+  border-bottom: 1px solid rgba(70, 64, 54, 0.4);
+}
+
+.prose-rag strong {
+  color: #f5f0e8;
+  font-weight: 600;
+}
+
+.prose-rag a {
+  color: #e8a84c;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Typing cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typing-cursor::after {
+  content: "▍";
+  animation: blink 0.8s step-end infinite;
+  color: #e8a84c;
+  margin-left: 1px;
+}
