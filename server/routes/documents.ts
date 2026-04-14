@@ -82,9 +82,10 @@ router.get("/api/intents", async (_req: Request, res: Response) => {
 // Generated output files
 import { readdir, stat as fsStat } from "fs/promises";
 import path from "path";
+import { PATHS } from "../config.js";
 
 router.get("/api/output-files", async (_req: Request, res: Response) => {
-  const outputDir = path.resolve("data/output");
+  const outputDir = PATHS.output;
   try {
     const entries = await readdir(outputDir);
     const files = [];

@@ -1,7 +1,9 @@
 import { writeFile, readFile, readdir, mkdir } from "fs/promises";
 import path from "path";
 
-const INTENTS_DIR = path.resolve("data/memory/intents");
+import { PATHS } from "../config.js";
+
+const INTENTS_DIR = PATHS.intents;
 
 export interface Intent {
   title: string;

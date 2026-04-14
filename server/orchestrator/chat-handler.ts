@@ -27,11 +27,12 @@ import { appendEvent } from "../memory/session-events.js";
 import { saveSessionUsage } from "../memory/session-usage.js";
 import { buildRoutingPrompt } from "../agents/registry.js";
 import path from "path";
+import { PATHS } from "../config.js";
 
 // ==============================
 // 외부 MCP 서버 설정
 // ==============================
-const MEMORY_FILE = path.resolve("data/memory/knowledge-graph.json");
+const MEMORY_FILE = PATHS.knowledgeGraph;
 
 /**
  * 외부 MCP 서버 — 필요할 때만 포함 (npx 시작 오버헤드 2-5초/서버)
@@ -202,7 +203,7 @@ interface ChatOptions {
 async function loadRecentOutputFiles(): Promise<string | undefined> {
   try {
     const { readdir, stat: fsStat } = await import("fs/promises");
-    const outputDir = path.resolve("data/output");
+    const outputDir = PATHS.output;
     const entries = await readdir(outputDir);
     const files: { name: string; modified: string }[] = [];
 

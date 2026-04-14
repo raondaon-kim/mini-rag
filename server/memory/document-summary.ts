@@ -12,6 +12,7 @@ import db from "../db/connection.js";
 import Anthropic from "@anthropic-ai/sdk";
 import { writeFile, mkdir, stat as fsStat } from "fs/promises";
 import path from "path";
+import { PATHS } from "../config.js";
 import { chunkDocument } from "../ingestion/chunker.js";
 import { indexDocument } from "../ingestion/indexer.js";
 import { computeHash } from "../ingestion/deduplicator.js";
@@ -229,7 +230,7 @@ ${allPartials.slice(0, 8000)}
     saveDocumentSummary(summary);
 
     // 마크다운 파일 저장
-    const summaryDir = path.resolve("data/output/summaries");
+    const summaryDir = PATHS.summaries;
     await mkdir(summaryDir, { recursive: true });
     const safeName = fileName.replace(/[^a-zA-Z0-9가-힣._-]/g, "_").replace(/\.[^.]+$/, "");
     const mdPath = path.join(summaryDir, `${safeName}_요약.md`);

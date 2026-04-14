@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: mini-rag
+    runtime: node
+    plan: starter # 2GB RAM
+    buildCommand: |
+      npm install &&
+      cd client && npm install && npm run build && cd .. &&
+      pip install python-pptx openpyxl xlsxwriter python-docx reportlab Pillow
+    startCommand: npx tsx server/index.ts
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: PORT
+        value: "10000"
+      - key: ANTHROPIC_API_KEY
+        sync: false # Must set manually in Render dashboard
+      - key: DB_PATH
+        value: /opt/render/project/data/rag.sqlite
+      - key: DATA_PATH
+        value: /opt/render/project/data
+      - key: DOCS_PATH
+        value: /opt/render/project/data/docs
+    disk:
+      name: mini-rag-data
+      mountPath: /opt/render/project/data
+      sizeGB: 1
